@@ -19,4 +19,8 @@ function tri_a_bulles($t){
 		for($i=0;$i<count($t);$i++) echo $t[$i]." ";
 		echo "<br />";
 	}
+	$result = array();
+	$result[0]= $t;
+	$result[1]= $cpt; //nb de cycle 
+	return $result; //tab de tab avec nb cycle en $result[1]
 }

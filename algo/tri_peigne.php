@@ -3,6 +3,9 @@ function tri_peigne(int* tableau){
 	$gap = 20;
 	$permutation = true;
 	$en_cours;
+
+	$cpt = 0; //declaration nb cycle
+
 	while ($permutation or $gap>1){
 		$permutation = false;
 		$gap = $gap / 1.3;
@@ -15,7 +18,15 @@ function tri_peigne(int* tableau){
 				tableau[$en_cours] = tableau[$en_cours+$gap];
 				tableau[$en_cours+$gap] = temp;
 			}
+			$cpt++; //nb cycle
 		}
 	}
+
+	$result = array();
+	$result[0]= $t;
+	$result[1]= $cpt; //nb de cycle 
+
+	return $result; 	 //tab de tab avec nb cycle en $result[1]
+
 }
 ?>

@@ -1,4 +1,7 @@
 <?php
+
+// a voir 
+
 function tri_rapide($array){
     if( count( $array ) < 2 ) {
         return $array;
