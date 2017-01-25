@@ -16,5 +16,4 @@ function tri_par_selection($t){
 		echo "<br />";
 	}
 }
-function tri_shell($t){
 ?>
