@@ -1,4 +1,7 @@
 <?php
+
+// a voir 
+
 function tri_rapide($array){
     if( count( $array ) < 2 ) {
         return $array;
@@ -13,6 +16,6 @@ function tri_rapide($array){
         else
             $right[$k] = $v;
     }
-    return array_merge(quicksort($left), array($pivot_key => $pivot), quicksort($right));
+    return array_merge(tri_rapide($left), array($pivot_key => $pivot), tri_rapide($right));
 }
 ?>

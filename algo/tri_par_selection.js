@@ -12,9 +12,14 @@ function tri_par_selection($t){
 			$t[$min]=$t[$i];
 			$t[$i]=$temp;
 		}
-		for($j=0;$j<$cpt;$j++) echo $t[$j]." ";
-		echo "<br />";
+		for($j=0;$j<$cpt;$j++)
 	}
+
+	$result = array();
+	$result[0]= $t;
+	$result[1]= $cpt; //nb de cycle 
+
+	return $result; 	 //tab de tab avec nb cycle en $result[1]
+
 }
-function tri_shell($t){
 ?>
