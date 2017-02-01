@@ -1,8 +1,7 @@
 function tri_a_bulles(t){
 	Permut=true;
-	cpt=count(t)-1;
+	cpt = (t.length) - 1;
 	while(Permut) {
-		for(i=0;i<count(t);i++) alert(t[i]);
 		Permut=false;
 		for(i=0;i<cpt;i++) {
 			if(t[i]>t[i+1]) {
@@ -13,14 +12,83 @@ function tri_a_bulles(t){
 			}
 		}
 		cpt--;
-		for(i=0;i<count(t);i++);
 	}
-	result = array();
+	console.log(t);
+	result =  new Array();
 	result[0]= t;
 	result[1]= cpt; //nb de cycle 
 	return result; //tab de tab avec nb cycle en result[1]
 }
-function tri_fusion (tab, debut, fin){
+
+
+function tri_par_insertion(t)
+{	 
+	cpt = t.length;
+	for(i=1;i<cpt;i++) 
+	{ 
+    	mem=t[i]; 
+    	pos=i-1; 
+    	while((pos>=0) && (t[pos]>mem))
+    	{ 
+      		t[pos+1]=t[pos];
+      		pos--; 
+    	} 
+   		t[pos+1]=mem; 
+    }
+
+    result = new Array();
+    result[0] = t;
+    result[1] = i;
+    return (result);
+}
+
+function tri_par_selection(t){
+	cpt=t.length;
+	for(i=0;i<cpt-1;i++) {
+		min=i;
+		for(j=i+1;j<cpt;j++) {
+			if(t[j]<t[min]) min=j;
+		}
+		if(min!=i) {
+			temp=t[min];
+			t[min]=t[i];
+			t[i]=temp;
+		}
+	}
+	console.log(t);
+	result = new Array();
+	result[0]= t;
+	result[1]= cpt; //nb de cycle 
+
+	return result; 	 //tab de tab avec nb cycle en result[1]
+}
+
+/*function tri_shell(t){
+	n=0;
+	cpt=t.length;
+	while(n<cpt) n=3*n+1;
+	while(n!=0) {
+		n=(n/3);
+		for(i=n;i<cpt;i++) {
+			mem=t[i];
+			j=i;
+			while(j>(n-1) && t[j-n]>mem) {
+				t[j]=t[j-n];
+				j=j-n;
+			}
+			t[j]=mem;
+		}
+	}
+	console.log(t);
+	result = new Array();
+	result[0]= t;
+	result[1]= cpt; //nb de cycle 
+
+	return result; 	 //tab de tab avec nb cycle en result[1]
+}*/
+
+
+/*function tri_fusion (tab, debut, fin){
 	cpt = 0;
 	if(debut<fin) {
 		milieu = round((debut+fin)/2,0, PHP_ROUND_HALF_DOWN);
@@ -35,48 +103,6 @@ function tri_fusion (tab, debut, fin){
 	return result; //tab de tab avec nb cycle en result[1]
 }
 
-function tri_par_insertion(t)
-{	 
-	c = 0;
-	for(i=1;i<t.length;i++) 
-	{ 
-    	mem=t[i]; 
-    	pos=i-1; 
-    	while((pos>=0) && (t[pos]>mem))
-    	{ 
-      		t[pos+1]=t[pos];
-      		pos--; 
-      		c++;
-    	} 
-   		t[pos+1]=mem; 
-    }
-
-    result = new Array();
-    result[0] = t;
-    result[1] = c;
-    return (result);
-}
-
-function tri_par_selection(t){
-	cpt=count(t);
-	for(i=0;i<cpt-1;i++) {
-		min=i;
-		for(j=i+1;j<cpt;j++) {
-			if(t[j]<t[min]) min=j;
-		}
-		if(min!=i) {
-			temp=t[min];
-			t[min]=t[i];
-			t[i]=temp;
-		}
-	}
-
-	result = array();
-	result[0]= t;
-	result[1]= cpt; //nb de cycle 
-
-	return result; 	 //tab de tab avec nb cycle en result[1]
-}
 function tri_peigne(tableau){
 	gap = 20;
 	permutation = true;
@@ -105,7 +131,7 @@ function tri_peigne(tableau){
 	result[1]= cpt; //nb de cycle 
 
 	return result; 	 //tab de tab avec nb cycle en result[1]
-}
+}*/
 /*function tri_rapide(array){
     if( count( array ) < 2 ) {
         return array;
@@ -121,29 +147,6 @@ function tri_peigne(tableau){
             right[k] = v;
     }
     return array_merge(tri_rapide(left), array(pivot_key => pivot), tri_rapide(right));
-}
-function tri_shell(t){
-	n=0;
-	cpt=count(t);
-	while(n<cpt) n=3*n+1;
-	while(n!=0) {
-		n=(int)(n/3);
-		for(i=n;i<cpt;i++) {
-			mem=t[i];
-			j=i;
-			while(j>(n-1) && t[j-n]>mem) {
-				t[j]=t[j-n];
-				j=j-n;
-			}
-			t[j]=mem;
-		}
-	}
-	
-	result = array();
-	result[0]= t;
-	result[1]= cpt; //nb de cycle 
-
-	return result; 	 //tab de tab avec nb cycle en result[1]
 }
 ?>
 */
