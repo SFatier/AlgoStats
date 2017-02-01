@@ -63,12 +63,12 @@ function tri_par_selection(t){
 	return result; 	 //tab de tab avec nb cycle en result[1]
 }
 
-/*function tri_shell(t){
+function tri_shell(t){
 	n=0;
 	cpt=t.length;
-	while(n<cpt) n=3*n+1;
+	while(n<cpt) { n=3*n+1};
 	while(n!=0) {
-		n=(n/3);
+		n=parseInt(n/3);
 		for(i=n;i<cpt;i++) {
 			mem=t[i];
 			j=i;
@@ -85,7 +85,7 @@ function tri_par_selection(t){
 	result[1]= cpt; //nb de cycle 
 
 	return result; 	 //tab de tab avec nb cycle en result[1]
-}*/
+}
 
 
 /*function tri_fusion (tab, debut, fin){
@@ -97,13 +97,14 @@ function tri_par_selection(t){
 		fusionner(tab, debut, milieu, fin);
 		cpt++;
 	}
-	result = array();
+	console.log(tab)
+	result = new Array();
 	result[0]= tab;
 	result[1]= cpt; //nb de cycle 
 	return result; //tab de tab avec nb cycle en result[1]
-}
+}*/
 
-function tri_peigne(tableau){
+/*function tri_peigne(tableau){
 	gap = 20;
 	permutation = true;
 	en_cours;
@@ -133,7 +134,7 @@ function tri_peigne(tableau){
 	return result; 	 //tab de tab avec nb cycle en result[1]
 }*/
 /*function tri_rapide(array){
-    if( count( array ) < 2 ) {
+    if( array.length ) < 2 ) {
         return array;
     }
     left = right = array( );
@@ -148,5 +149,4 @@ function tri_peigne(tableau){
     }
     return array_merge(tri_rapide(left), array(pivot_key => pivot), tri_rapide(right));
 }
-?>
 */
