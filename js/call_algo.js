@@ -140,6 +140,7 @@ function call (){
 			result = tri_shell(liste);
 			break;    	   	  	   	  	
 	}
+	console.log(result);
 	return result;
 }
 

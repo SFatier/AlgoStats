@@ -49,22 +49,27 @@ function tri_fusion (tab, debut, fin){
 
 	return result; 	 //tab de tab avec nb cycle en result[1]
 }*/
-function tri_par_insertion(t){
+function tri_par_insertion(t)
+{	 
 	cpt = t.length;
-	for (i = 1; i < cpt; i++)
-	{
-		mem = t[i];
-		pos = i - 1;
-		while (pos > 0 && t[pos] > mem)
-		{
-			t[pos + 1] = t[pos];
-			pos = pos + 1
-			console.log(t);
-		}
-		t[pos + 1] = mem;
-	}
-	return t;
+	for(i=1;i<cpt;i++) 
+	{ 
+    	mem=t[i]; 
+    	pos=i-1; 
+    	while((pos>=0) && (t[pos]>mem))
+    	{ 
+      		t[pos+1]=t[pos];
+      		pos--; 
+    	} 
+   		t[pos+1]=mem; 
+    }
+
+    result = new Array();
+    result[0] = t;
+    result[1] = i;
+    return (result);
 }
+
 function tri_par_selection(t){
 	cpt=count(t);
 	for(i=0;i<cpt-1;i++) {
