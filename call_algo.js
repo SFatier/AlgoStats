@@ -1,5 +1,5 @@
 function call (){
-	liste = new Array(12,63,98,46,73,8,1,8,9,3);
+	liste = new Array(10,11,1,2,3,4,5,6,7,8,9);
 	console.log(event.target.name);
 	switch (event.target.name) {
 	//triee

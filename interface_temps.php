@@ -1,6 +1,3 @@
-<?
-require('../models/algorithms.php');
-?>
 <!DOCTYPE html>
 <html>
 <head>

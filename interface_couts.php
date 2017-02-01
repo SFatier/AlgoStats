@@ -2,8 +2,8 @@
 <html>
 <head>
 	<title>Couts des algorithmes de tri</title>
-	<script type="text/javascript" src="../js/call_algo.js"></script>
-	<script type="text/javascript" src="../algo/algorithms.js"></script>
+	<script type="text/javascript" src="call_algo.js"></script>
+	<script type="text/javascript" src="algorithms.js"></script>
 </head>
 <body>
 	<table class="" width="100%" align="right">

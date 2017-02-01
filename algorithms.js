@@ -37,8 +37,8 @@ function tri_fusion (tab, debut, fin){
 
 function tri_par_insertion(t)
 {	 
-	cpt = t.length;
-	for(i=1;i<cpt;i++) 
+	c = 0;
+	for(i=1;i<t.length;i++) 
 	{ 
     	mem=t[i]; 
     	pos=i-1; 
@@ -46,13 +46,14 @@ function tri_par_insertion(t)
     	{ 
       		t[pos+1]=t[pos];
       		pos--; 
+      		c++;
     	} 
    		t[pos+1]=mem; 
     }
 
     result = new Array();
     result[0] = t;
-    result[1] = i;
+    result[1] = c;
     return (result);
 }
 
