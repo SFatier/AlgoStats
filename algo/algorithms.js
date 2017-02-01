@@ -34,21 +34,7 @@ function tri_fusion (tab, debut, fin){
 	result[1]= cpt; //nb de cycle 
 	return result; //tab de tab avec nb cycle en result[1]
 }
-/*function tri_par_insertion(liste){
-	for (i=0; i < liste.length; i++) {
-		ret = liste[i];
-		for (j=i; (ret > liste[j+1]); j++) {
-			liste[j] = liste[j+1];
-			liste[j+1] = ret;
-		console.log(liste);
-		}
-	}
-	result = new Array();
-	result[0]= liste;
-	result[1]= i; //nb de cycle 
 
-	return result; 	 //tab de tab avec nb cycle en result[1]
-}*/
 function tri_par_insertion(t)
 {	 
 	cpt = t.length;
