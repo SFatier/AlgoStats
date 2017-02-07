@@ -151,7 +151,7 @@ function tri_peigne(tableau)
 
 	cpt = 0; //declaration nb cycle
 
-	while (permutation || gap>1)
+	while (permutation || gap > 1)
 	{
 		permutation = false;
 		gap = gap / 1.3;

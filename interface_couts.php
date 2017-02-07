@@ -4,8 +4,20 @@
 	<title>Couts des algorithmes de tri</title>
 	<script type="text/javascript" src="call_algo.js"></script>
 	<script type="text/javascript" src="algorithms.js"></script>
+	<script type="text/javascript" src="validation.js"></script>
 </head>
 <body>
+
+<form onsubmit="myFunction()">
+	<select id="valider" >
+	  <option value="1">10</option>
+	  <option value="2">100</option>
+	  <option value="3">1000</option>
+	  <option value="4">10000</option>
+	</select>
+	<input type="submit" value="Submit">
+</form>
+
 	<table class="" width="100%" align="right">
 		<tr>
 			<th>Algorithme de tri</th>
@@ -80,5 +92,18 @@
 			<td><input type="submit" name="btnTriPeigne_medium" onclick="call()" /></td>
 		</tr>
 	</table>
+<script>
+function myFunction() {
+	try
+	{
+		var e = document.getElementById("valider");
+	    var rst = e.options[e.selectedIndex].value;
+	    alert(rst);
+	    sessionStorage.setItem("rst", rst);
+	}catch(e){
+		console.log("Je ne trouve pas la fonction");
+	}
+}
+</script>
 </body>
 </html>
