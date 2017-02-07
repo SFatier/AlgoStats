@@ -88,26 +88,57 @@ function tri_shell(t){
 }
 
 
-/*function tri_fusion (tab, debut, fin){
-	cpt = 0;
-	if(debut<fin) {
-		milieu = round((debut+fin)/2,0, PHP_ROUND_HALF_DOWN);
-		tri_fusion(tab, debut, milieu);
-		tri_fusion(tab, milieu+1, fin);
-		fusionner(tab, debut, milieu, fin);
-		cpt++;
-	}
-	console.log(tab)
-	result = new Array();
-	result[0]= tab;
+function tri_fusion (tab){
+	cpt=tab.length;
+	if( cpt <= 1 ){
+		return;	
+	} 
+    else
+    {
+        tab1 = array();
+        tab2 = array();
+        for( i = 0; $i < cpt; i++) {
+            if( $i < cpt / 2 )
+                tab1[] = tableau[i];
+            else
+                tab2[] = tableau[i];
+        }
+    	  // Appel la fonction tri récursivement
+        triFusion(tab1);
+        triFusion(tab2);
+        // Fusionne les petits tableaux en plus grand
+        fusionner(tab1,tab2,tableau);
+    }
+	result[0]= tableau;
 	result[1]= cpt; //nb de cycle 
 	return result; //tab de tab avec nb cycle en result[1]
-}*/
+}
 
-/*function tri_peigne(tableau){
-	gap = 20;
+ public function fusionner ( $tab1, $tab2, &$tab )
+{
+        i = 0;
+        i1 = i2 = 0;
+        // Fusionne les petits tableaux dans le plus grand
+        while( i1 < tab1.length ) && i2 < tab2.lenth ) ) {
+            if( tab1[ i1 ] < tab2[ i2 ] ) // On compare ici
+                tab[ i ] = tab1[ i1++ ];
+            else
+                tab[ i ] = tab2[ i2++ ];
+            i++;
+        }
+        // S'il reste des éléments dans un des 2 tableaux mais pas dans l'autre
+        while( i1 < tab1.length ) {
+            tab[ i ] = tab1[ i1++ ];
+            i++;
+        }
+        while( i2 < tab2 ) {
+            tab[ i ] = tab2[ i2++ ];
+            i++;
+}
+
+function tri_peigne(tableau){
+	gap = tableau.length;
 	permutation = true;
-	en_cours;
 
 	cpt = 0; //declaration nb cycle
 
@@ -132,21 +163,21 @@ function tri_shell(t){
 	result[1]= cpt; //nb de cycle 
 
 	return result; 	 //tab de tab avec nb cycle en result[1]
-}*/
-/*function tri_rapide(array){
-    if( array.length ) < 2 ) {
-        return array;
+}
+
+function tri_rapide(array){
+ 	if(tableau.length < 2 ) {
+        return tableau;
     }
     left = right = array( );
-    reset( array );
-    pivot_key  = key( array );
-    pivot  = array_shift( array );
-    //foreach( array as k => v ) {
+    tableau = [];
+    pivot_key  = Object.keys( tableau );
+    pivot  = tableau.shift();
+    foreach( tableau as k => v ) {
         if( v < pivot )
             left[k] = v;
         else
             right[k] = v;
-    }
-    return array_merge(tri_rapide(left), array(pivot_key => pivot), tri_rapide(right));
+    } 
+    return array_merge(static::triRapide(left), array(pivot_key => pivot), static::triRapide(right));
 }
-*/
