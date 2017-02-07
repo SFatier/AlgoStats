@@ -160,10 +160,17 @@ function call (){
 			break;    	   	  	   	  	
 	}
 	console.log(result);
+
+	generate_graph();
+
 	return result;
+}
+
+function generate_graph(){
+	
 }
 
 function changebtn_tbx(result){
 	//supprime btn et ajoute du result a la place
-}
 
+}
