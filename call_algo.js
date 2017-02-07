@@ -161,13 +161,26 @@ function call (){
 	}
 	console.log(result);
 
-	generate_graph();
+	ajouter_data(result[1]);
 
 	return result;
 }
 
-function generate_graph(){
+function ajouter_data(result)
+{
+	count = $("#myChart").length;
+	console.log(count);
 	
+	if (myChart.datasets.length > 0) 
+    {
+       // var month = MONTHS[myChart.labels.length % MONTHS.length];
+        //myChart.labels.push(month);
+        for (var index = 0; index < myChart.datasets.length; ++index) {
+            //window.myBar.addData(randomScalingFactor(), index);
+            myChart.datasets[index].data.push(result);
+        }
+        myBar.update();
+    }
 }
 
 function changebtn_tbx(result){

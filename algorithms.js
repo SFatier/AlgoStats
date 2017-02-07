@@ -115,7 +115,7 @@ function tri_fusion (tab){
         // Fusionne les petits tableaux en plus grand
         fusionner(tab1,tab2,tab);
     }
-    result = new Array;
+    result = new Array();
 	result[0]= tab;
 	result[1]= cpt; //nb de cycle 
 	return result; //tab de tab avec nb cycle en result[1]
@@ -168,7 +168,7 @@ function tri_peigne(tableau)
 			cpt++; //nb cycle
 		}
 	}
-	result = new Array;
+	result = new Array();
 	result[0]= tableau;
 	result[1]= cpt; //nb de cycle 
 	return result; //tab de tab avec nb cycle en result[1]
