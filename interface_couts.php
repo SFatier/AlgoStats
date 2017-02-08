@@ -7,9 +7,19 @@
 	<script src="js/dist/Chart.bundle.js"></script>
 	<script src="js/dist/jquery.min.js"></script>
     <script src="js/utils.js"></script></head>
+    <link rel="stylesheet" href="css/css.css">
 <body>
 
-<form onsubmit="myFunction()">
+
+
+<div id="entete">
+ En tête
+</div>
+
+<div id="main">
+
+ <div id="contenu">
+  <form onsubmit="myFunction()">
 	<select id="valider" >
 	  <option value="1">10</option>
 	  <option value="2">100</option>
@@ -94,7 +104,19 @@
 		</tr>
 	</table>
 
-<canvas id="myChart" width="100" height="100"></canvas>
+<div id="container" style="width: 75%;">
+        <canvas id="canvas"></canvas>
+    </div>
+
+ </div>
+
+</div>
+
+<div id="footer">
+ Pied de Page
+</div>
+
+
 
 <script>
 function myFunction() {
@@ -109,44 +131,52 @@ function myFunction() {
 	}
 }
 
-var ctx = document.getElementById("myChart");
-var myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-/*        labels: ["Selection", "", "Yellow", "Green", "Purple", "Orange"],
-*/        datasets: [{
-            label: 'Test',
-            data: [2],
-          /*  backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255,99,132,1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],*/
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            yAxes: [{
-                ticks: {
-                    beginAtZero:true
-                }
+        var color = Chart.helpers.color;
+        var barChartData = {
+            
+            datasets: [{
+                label: 'test',
+                backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
+                borderColor: window.chartColors.red,
+                borderWidth: 1,
+                data: [
+                ]
             }]
-        }
-    }
-});
 
-</script>
+        };
+
+        window.onload = function() {
+            var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartData,
+                options: {
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Graphique Triée'
+                    }
+                }
+            });
+
+        };
+
+        /*document.getElementById('btnAdd').addEventListener('click',*/
+        function add (rst) {
+            if (barChartData.datasets.length > 0) {
+                var month = rst[2];
+                barChartData.labels.push(month);
+
+                for (var index = 0; index < barChartData.datasets.length; ++index) {
+                    //window.myBar.addData(randomScalingFactor(), index);
+                    barChartData.datasets[index].data.push(rst[1]);
+                }
+                window.myBar.update();
+            }
+        }
+    </script>
 </body>
 </html>
