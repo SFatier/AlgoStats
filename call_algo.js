@@ -161,27 +161,41 @@ function call (){
 	}
 	console.log(result);
 
-	ajouter_data(result[1]);
+	rst = new Array();
+	rst[0] = result[0]; //donnee retourner
+	rst[1] = result[1]; //nombre de cycle
+	rst[2] = event.target.name;
 
-	return result;
+	add(rst);
+
+	return rst;
 }
-
-function ajouter_data(result)
+/*
+function ajouter_data(rst)
 {
 	count = $("#myChart").length;
 	console.log(count);
 	
-	if (myChart.datasets.length > 0) 
+	if (count > 0) 
     {
-       // var month = MONTHS[myChart.labels.length % MONTHS.length];
-        //myChart.labels.push(month);
-        for (var index = 0; index < myChart.datasets.length; ++index) {
-            //window.myBar.addData(randomScalingFactor(), index);
-            myChart.datasets[index].data.push(result);
-        }
+    	var label = rst[2];
+    	console.log(label);
+    	var data = rst[1];
+
+    	var newDataset = {
+        label: "Vendas",
+        backgroundColor: 'rgba(99, 255, 132, 0.2)',
+        borderColor: 'rgba(99, 255, 132, 1)',
+        borderWidth: 1,
+        data: [10],
+	    }
+
+
+	    data.datasets.push(newDataset);
         myBar.update();
     }
 }
+*/
 
 function changebtn_tbx(result){
 	//supprime btn et ajoute du result a la place
