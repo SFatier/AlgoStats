@@ -1,27 +1,23 @@
 function call (){
 	var option = sessionStorage.getItem('rst');
 	console.log(option);
-	if (option = 1)
-	{
-		liste = new Array(10,11,1,2,3,4,5,6,7,8,9);
-	}
-	else if (option = 2) 
-	{
-		console.log("ajouter tab 100");
-	}
-	else if (option = 3)
-	{
-		console.log("ajouter tab 1000");
-	}
-	else
-	{
-		console.log("ajouter tab 10 000");
+	switch(option){
+		case 1:
+			console.log("ajouter tab 100");
+			break;
+		case 2:
+			console.log("ajouter tab 1000");
+			break;
+		case 3:
+			console.log("ajouter tab 10 000");
+			break;
+		default:
+			liste = new Array(10,11,1,2,3,4,5,6,7,8,9);
 	}
 
 	console.log(event.target.name);
 	
 	switch (event.target.name) {
-	//triee
 		case 'btnTribulle_triee':
 			result = tri_a_bulles(liste);
 			break;
@@ -44,7 +40,6 @@ function call (){
 			result = tri_shell(liste);
 			break;
 
-	//inverser
 		case 'btnTribulle_inverse':
 			result = tri_a_bulles(liste);
 			break;
@@ -67,7 +62,6 @@ function call (){
 			result = tri_shell(liste);
 			break;
 
-	//random
 		case 'btnTribulle_random':
 			result = tri_a_bulles(liste);
 			break;
@@ -170,34 +164,24 @@ function call (){
 
 	return rst;
 }
-/*
-function ajouter_data(rst)
-{
+function ajouter_data(rst){
 	count = $("#myChart").length;
 	console.log(count);
-	
-	if (count > 0) 
-    {
-    	var label = rst[2];
-    	console.log(label);
-    	var data = rst[1];
 
-    	var newDataset = {
-        label: "Vendas",
-        backgroundColor: 'rgba(99, 255, 132, 0.2)',
-        borderColor: 'rgba(99, 255, 132, 1)',
-        borderWidth: 1,
-        data: [10],
-	    }
+	if (count > 0) {
+		var label = rst[2];
+		console.log(label);
+		var data = rst[1];
 
+		var newDataset = {
+			label: "Vendas",
+			backgroundColor: 'rgba(99, 255, 132, 0.2)',
+			borderColor: 'rgba(99, 255, 132, 1)',
+			borderWidth: 1,
+			data: [10],
+		}
 
-	    data.datasets.push(newDataset);
-        myBar.update();
-    }
-}
-*/
-
-function changebtn_tbx(result){
-	//supprime btn et ajoute du result a la place
-
+		data.datasets.push(newDataset);
+		myBar.update();
+	}
 }
