@@ -1,6 +1,25 @@
 function call (){
-	liste = new Array(10,11,1,2,3,4,5,6,7,8,9);
+	var option = sessionStorage.getItem('rst');
+	console.log(option);
+	if (option = 1)
+	{
+		liste = new Array(10,11,1,2,3,4,5,6,7,8,9);
+	}
+	else if (option = 2) 
+	{
+		console.log("ajouter tab 100");
+	}
+	else if (option = 3)
+	{
+		console.log("ajouter tab 1000");
+	}
+	else
+	{
+		console.log("ajouter tab 10 000");
+	}
+
 	console.log(event.target.name);
+	
 	switch (event.target.name) {
 	//triee
 		case 'btnTribulle_triee':
@@ -141,9 +160,30 @@ function call (){
 			break;    	   	  	   	  	
 	}
 	console.log(result);
+
+	ajouter_data(result[1]);
+
 	return result;
+}
+
+function ajouter_data(result)
+{
+	count = $("#myChart").length;
+	console.log(count);
+	
+	if (myChart.datasets.length > 0) 
+    {
+       // var month = MONTHS[myChart.labels.length % MONTHS.length];
+        //myChart.labels.push(month);
+        for (var index = 0; index < myChart.datasets.length; ++index) {
+            //window.myBar.addData(randomScalingFactor(), index);
+            myChart.datasets[index].data.push(result);
+        }
+        myBar.update();
+    }
 }
 
 function changebtn_tbx(result){
 	//supprime btn et ajoute du result a la place
+
 }
