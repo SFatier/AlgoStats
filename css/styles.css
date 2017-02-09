@@ -1,8 +1,11 @@
 #header {
 	background-color:rgba(75,192,192,0.4);
-	position: fixed;
+	padding: 13px 17px 0px;
 	width: 100%;
 	top: 0;
+}
+form{
+	display: inline-block;
 }
 #main {
 	max-width:90%;
@@ -10,15 +13,6 @@
 }
 #footer {
 	background-color:rgba(75,192,192,0.4);	
-}
-#footer .left{
-	text-align: left;
-}
-#footer .center{
-	text-align: center;
-}
-#footer .right{
-	text-align: right;
 }
 #canvas{
 	width: 100%

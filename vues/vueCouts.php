@@ -1,4 +1,4 @@
-<?php $title = 'Mon Blog'; ?>
+<?php $title = 'Couts de calcul des algorithmes de tri'; ?>
 <?php ob_start(); ?>
 	<table class="table" width="100%" align="right">
 		<tr>
