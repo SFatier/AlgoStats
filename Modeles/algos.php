@@ -16,7 +16,6 @@ function tri_par_insertion($tab){
 	$result[1] = $i;
 	return ($result);
 }
-
 function tri_a_bulles($tab){
 	$permut=true;
 	$cpt = (count($tab)) - 1;
@@ -38,7 +37,6 @@ function tri_a_bulles($tab){
 	$result[1]= $cpt; //nb de cycle 
 	return $result; //tab de tab avec nb cycle en result[1]
 }
-
 function tri_par_selection($tab){
 	$cpt=count($tab);
 	for ($i=0; $i < $cpt; $i++) { 
@@ -59,7 +57,6 @@ function tri_par_selection($tab){
 
 	return $result; 	 //tab de tab avec nb cycle en result[1]
 }
-
 function tri_shell($tab){
 	$n=0;
 	$cpt=count($tab);
@@ -83,10 +80,8 @@ function tri_shell($tab){
 
 	return $result; 	 //tab de tab avec nb cycle en result[1]
 }
-
 function tri_fusion ($tab){
 	$cpt=count($tab);
-	$j = 0;
 	if( $cpt <= 1 ){
 		return;	
 	} else {
@@ -94,10 +89,9 @@ function tri_fusion ($tab){
 		$tab2 = array();
 		for( $i = 0; $i < $cpt; $i++) {
 			if( $i < $cpt / 2 )
-				$tab1[$j] = $tab[$i];
+				$tab1[$i] = $tab[$i];
 			else
-				$tab2[$j] = $tab[$i];
-			$j++;
+				$tab2[$i] = $tab[$i];
 		}
 		// Appel la fonction tri récursivement
 		tri_fusion($tab1);
@@ -110,7 +104,6 @@ function tri_fusion ($tab){
 	$result[1]= $cpt; //nb de cycle 
 	return $result; //tab de tab avec nb cycle en result[1]
 }
-
 function fusionner ( $tab1, $tab2, $tab ){
 	$i = 0;
 	$i1 = $i2 = 0;
@@ -134,7 +127,6 @@ function fusionner ( $tab1, $tab2, $tab ){
 		$i++;
 	}
 }
-
 function tri_peigne($tab){
 	$gap = count($tab);
 	$permutation = true;
@@ -160,7 +152,6 @@ function tri_peigne($tab){
 	$result[1]= $cpt; //nb de cycle 
 	return $result; //tableau de tableaux avec nb cycle en result[1]
 }
-
 function tri_rapide($tab){
 	if(count($tab) < 2 )
 		return $tab;

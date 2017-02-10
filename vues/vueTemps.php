@@ -77,4 +77,3 @@
 	<hr>
 	<canvas id="canvas"></canvas>
 <?php $content = ob_get_clean(); ?>
-<?php require 'template.php'; ?>

@@ -1,4 +1,6 @@
 <?php
+require('algos.php');
+require('listes.php');
 $selfAlgo = ['insert', 'bulles', 'select', 'shell', 'fusion', 'peigne'];
 $selfList = ['rangee', 'invert', 'random', 'quasi', 'multie', 'medium'];
 if (isset($_GET['size'])) {

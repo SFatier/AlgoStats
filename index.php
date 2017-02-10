@@ -1,19 +1,18 @@
 <?php
-require('models/listGen.php');
-require('models/algorithms.php');
-require('models/modeles.php');
+require('Modeles/modeles.php');
 if (isset($_GET['stats'])) {
 	switch ($_GET['stats']) {
 		case 'couts':
-			require('vues/vueCouts.php');
+			require('Vues/vueCouts.php');
 			break;
 		case 'temps':
-			require('vues/vueTemps.php');
+			require('Vues/vueTemps.php');
 			break;
 		default:
-			require('vues/vueIntro.php');
+			require('Vues/vueIntro.php');
 			break;
 	}
 }else{
-	require('vues/vueIntro.php');
+	require('Vues/vueIntro.php');
 }
+require('Vues/template.php');

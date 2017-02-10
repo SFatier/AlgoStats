@@ -157,19 +157,20 @@ function tri_peigne(tableau){
 	result[1]= cpt; //nb de cycle 
 	return result; //tab de tab avec nb cycle en result[1]
 }
-
+/*
 function tri_rapide(tableau){
-	if(tableau.length < 2 )
+	if(tableau.length < 2)
 		return tableau;
-	left = right = array( );
+	left = right = array();
 	tableau = [];
-	pivot_key  = Object.keys( tableau );
+	pivot_key  = Object.keys(tableau);
 	pivot  = tableau.shift();
-	foreach( tableau as k => v ) {
-		if( v < pivot )
+	foreach(tableau as k => v) {
+		if(v < pivot)
 			left[k] = v;
 		else
 			right[k] = v;
 	}
 	return array_merge(static::triRapide(left), array(pivot_key => pivot), static::triRapide(right));
 }
+*/
