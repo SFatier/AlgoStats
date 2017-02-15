@@ -24,7 +24,7 @@
 	</form>
 	<form method="get">
 		<button name="stats" type="submit" value="couts">Couts</button>
-		<button name="stats" type="submit" value="temps">Stats</button>
+		<button name="stats" type="submit" value="temps">Temps</button>
 	</form>
 </div>
 <div id="main">

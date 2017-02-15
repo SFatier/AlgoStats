@@ -16,6 +16,26 @@ function tri_par_insertion($tab){
 	$result[1] = $i;
 	return ($result);
 }
+function tri_par_selection($tab){
+	$cpt=count($tab);
+	for ($i=0; $i < $cpt; $i++) { 
+		$min=$i;
+		for($j=$i+1;$j<$cpt;$j++) {
+			if($tab[$j]<$tab[$min]) $min=$j;
+		}
+		if($min!=$i) {
+			$tabemp=$tab[$min];
+			$tab[$min]=$tab[$i];
+			$tab[$i]=$tabemp;
+		}
+	}
+	var_dump($tab);
+	$result = array();
+	$result[0]= $tab;
+	$result[1]= $cpt; //nb de cycle 
+
+	return $result; 	 //tab de tab avec nb cycle en result[1]
+}
 function tri_a_bulles($tab){
 	$permut=true;
 	$cpt = (count($tab)) - 1;
@@ -36,26 +56,6 @@ function tri_a_bulles($tab){
 	$result[0]= $tab;
 	$result[1]= $cpt; //nb de cycle 
 	return $result; //tab de tab avec nb cycle en result[1]
-}
-function tri_par_selection($tab){
-	$cpt=count($tab);
-	for ($i=0; $i < $cpt; $i++) { 
-		$min=$i;
-		for($j=$i+1;$j<$cpt;$j++) {
-			if($tab[$j]<$tab[$min]) $min=$j;
-		}
-		if($min!=$i) {
-			$tabemp=$tab[$min];
-			$tab[$min]=$tab[$i];
-			$tab[$i]=$tabemp;
-		}
-	}
-	var_dump($tab);
-	$result = array();
-	$result[0]= $tab;
-	$result[1]= $cpt; //nb de cycle 
-
-	return $result; 	 //tab de tab avec nb cycle en result[1]
 }
 function tri_shell($tab){
 	$n=0;
@@ -127,6 +127,21 @@ function fusionner ( $tab1, $tab2, $tab ){
 		$i++;
 	}
 }
+function tri_rapide($tab){
+	if(count($tab) < 2 )
+		return $tab;
+	$left = $right = array();
+	$tab = [];
+	$pivot_key  = Object.keys( $tab );
+	$pivot  = $tab.shift();
+	foreach( $tab as $k => $v ) {
+		if( $v < $pivot )
+			$left[$k] = $v;
+		else
+			$right[$k] = $v;
+	}
+//	return array_merge(static::triRapide($left), array($pivot_key => $pivot), static::triRapide($right));
+}
 function tri_peigne($tab){
 	$gap = count($tab);
 	$permutation = true;
@@ -151,19 +166,4 @@ function tri_peigne($tab){
 	$result[0]= $tab;
 	$result[1]= $cpt; //nb de cycle 
 	return $result; //tableau de tableaux avec nb cycle en result[1]
-}
-function tri_rapide($tab){
-	if(count($tab) < 2 )
-		return $tab;
-	$left = $right = array();
-	$tab = [];
-	$pivot_key  = Object.keys( $tab );
-	$pivot  = $tab.shift();
-	foreach( $tab as $k => $v ) {
-		if( $v < $pivot )
-			$left[$k] = $v;
-		else
-			$right[$k] = $v;
-	}
-//	return array_merge(static::triRapide($left), array($pivot_key => $pivot), static::triRapide($right));
 }

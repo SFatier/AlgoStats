@@ -1,19 +1,42 @@
-	var color = Chart.helpers.color;
-	var barChartData = {
-		datasets: [{
-			label: 'test',
-			backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-			borderColor: window.chartColors.red,
-			borderWidth: 1,
-			data: [
-			]
-		}]
-	};
 	window.onload = function() {
-		var ctx = document.getElementById("canvas").getContext("2d");
+		var ctx = "canvas";
 		window.myBar = new Chart(ctx, {
 			type: 'bar',
-			data: barChartData,
+			data: {
+				labels: ["Triée", "Inverse", "Random", "Quasi", "Multi", "Moyenne"],
+				datasets: [
+				{
+					label: 'insertion',
+					data: [1,2,3,4,5,6],
+					backgroundColor: 'red'
+				},
+				{
+					label: 'selection',
+					data: [1,2,3,4,5,6],
+					backgroundColor: 'green'
+				},
+				{
+					label: 'bulle',
+					data: [1,2,3,4,5,6],
+					backgroundColor: 'blue'
+				},
+				{
+					label: 'shell',
+					data: [1,2,3,4,5,6],
+					backgroundColor: 'cyan'
+				},
+				{
+					label: 'fusion',
+					data: [1,2,3,4,5,6],
+					backgroundColor: 'violet'
+				},
+				{
+					label: 'peigne',
+					data: [1,2,3,4,5,6],
+					backgroundColor: 'yellow'
+				}
+				]
+			},
 			options: {
 				responsive: true,
 				legend: {
