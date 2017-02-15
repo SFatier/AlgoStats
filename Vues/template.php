@@ -31,7 +31,7 @@
 <?=$content?>
 </div>
 <div id="footer">
-	<table class="table">
+	<table class="table" style="margin: 0">
 		<tr>
 			<td>Fermete Mounanga</td>
 			<td>Ségolène Fatier</td>
