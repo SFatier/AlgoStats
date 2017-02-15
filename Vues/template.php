@@ -7,9 +7,8 @@
 	<script src="Contenu/dist/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script src="Contenu/call_algo.js"></script>
-	<script src="Contenu/algorithms.js"></script>
+	<script src="Contenu/algos.js"></script>
 	<script src="Contenu/dist/Chart.bundle.js"></script>
-	<script src="Contenu/utils.js"></script>
 </head>
 <body>
 <div id="header">
