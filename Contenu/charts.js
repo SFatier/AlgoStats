@@ -48,6 +48,17 @@
 				}
 			}
 		});
+		var ctx2 = "myChart";
+		window.myBar2 = new Chart(ctx2, {
+			type: 'bar',
+			data: data2,
+			options: {
+				responsive: true,
+				legend: {
+					position: 'top',
+				}
+			}
+		});
 	};
 
 	function add (rst) {
@@ -84,7 +95,7 @@ function myFunction(){
 
     if(axeyValues[0] == "All")
     {
-    	
+    	//rst [0]	
     	result =  tri_par_insertion(liste);
     	rst[0] = result[0];
     	result = tri_a_bulles(liste);
@@ -98,8 +109,11 @@ function myFunction(){
     	result = tri_shell(liste);
     	rst[5] = result[0];
     	//result = tri_rapide(liste);
-    	rst[5] = null;
+    	rst[6] = null;
+    	
     	console.log(rst);
+
+
     }else{
     	while (y < axeyValues.length)
     	{
@@ -137,6 +151,7 @@ function myFunction(){
     		y++;
     	}
     	console.log(rst);
+    }
 
     	array = new Array();
     	array[0] = axeyValues;
@@ -144,14 +159,10 @@ function myFunction(){
 
 	   	add2 (array);
     	return array;
-    }
 };
 
-function loadgraph (array) {
-	}
 
 var data2 = {
-            labels: ["test"],
             datasets: [{
                 label: 'Dataset 1',
                 borderWidth: 1,
@@ -161,45 +172,34 @@ var data2 = {
         };
 
 
-window.onload = function() {
-		var ctx = "myChart";
-		window.myBar2 = new Chart(ctx, {
-			type: 'bar',
-			data: data2,
-			options: {
-				responsive: true,
-				legend: {
-					position: 'top',
-				}
-			}
-		});
-};
-
 function add2 (rst) {
 	console.log(rst);
 	if (rst[0] == "All") {
 		if (data2.datasets.length > 0) {			
-			
-			data2.labels.push("Insertion");
-			data2.datasets[index].data.push(rst[0]);
-			
-			data2.labels.push("Bulle");
-			data2.datasets[index].data.push(rst[1]);
-			
-			data2.labels.push("Selection");
-			data2.datasets[index].data.push(rst[2]);
+			for (var index = 0; index < data2.datasets.length; ++index) {
+				
 
-			data2.labels.push("Peigne");
-			data2.datasets[index].data.push(rst[3]);
-			
-			data2.labels.push("Fusion");			
-			data2.datasets[index].data.push(rst[4]);
+				data2.labels.push("Insertion");
+				data2.datasets[index].data.push(rst[1][0]);
+				
+				data2.labels.push("Bulle");
+				data2.datasets[index].data.push(rst[1][1]);
+				
+				data2.labels.push("Selection");
+				data2.datasets[index].data.push(rst[1][2]);
 
-			data2.labels.push("Shell");
-			data2.datasets[index].data.push(rst[5]);
+				data2.labels.push("Peigne");
+				data2.datasets[index].data.push(rst[1][3]);
+				
+				data2.labels.push("Fusion");			
+				data2.datasets[index].data.push(rst[1][4]);
 
-			data2.labels.push("Rapide");
-			data2.datasets[index].data.push(rst[6]);
+				data2.labels.push("Shell");
+				data2.datasets[index].data.push(rst[1][5]);
+
+				data2.labels.push("Rapide");
+				data2.datasets[index].data.push(rst[1][6]);
+			}
 		}
 		window.myBar2.update();
 	}else{
