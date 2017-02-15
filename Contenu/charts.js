@@ -60,3 +60,31 @@
 			window.myBar.update();
 		}
 	};
+
+
+function myFunction(){
+	 var form = document.getElementById("log");     
+     const axey = form.elements["axey"];
+     var axeyValues = [];
+     var y = 0;
+     liste = new Array(10,11,1,3,4,5,6,7,8,9);
+	
+
+    for(var i = 0; i < axey.options.length; i++)
+    {       
+      if(axey.options[i].selected == true)
+      {
+        axeyValues.push(axey.options[i].value);
+        
+      }        
+    }
+    console.log(axeyValues);
+
+    if(axeyValues[0] == "All")
+    {
+    	var data1 = tri_par_insertion(list).getTime();
+    	console.log(data1);
+    }else{
+
+    }
+};
