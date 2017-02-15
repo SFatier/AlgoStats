@@ -165,5 +165,5 @@ function tri_rapide($tab){
 		else
 			$right[$k] = $v;
 	}
-	return array_merge(static::triRapide($left), array($pivot_key => $pivot), static::triRapide($right));
+//	return array_merge(static::triRapide($left), array($pivot_key => $pivot), static::triRapide($right));
 }
