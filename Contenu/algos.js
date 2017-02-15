@@ -1,4 +1,5 @@
 function tri_par_insertion(t){
+	var t0 = performance.now();
 	cpt = t.length;
 	for(i=1;i<cpt;i++) {
 		mem=t[i];
@@ -9,14 +10,17 @@ function tri_par_insertion(t){
 		}
 		t[pos+1]=mem;
 	}
+	var t1 = performance.now();	
 
 	result = new Array();
-	result[0] = t;
+	result[0] = (t1 - t0);
 	result[1] = i;
+	result[2] = t;
 	return (result);
 }
 
 function tri_a_bulles(t){
+	var t0 = performance.now();
 	Permut=true;
 	cpt = (t.length) - 1;
 	while(Permut) {
@@ -31,14 +35,18 @@ function tri_a_bulles(t){
 		}
 		cpt--;
 	}
-	console.log(t);
-	result =  new Array();
-	result[0]= t;
+	var t1 = performance.now();	
+
+/*	console.log(t);
+*/	result =  new Array();
+	result[0]= (t1 - t0);
 	result[1]= cpt; //nb de cycle 
+	result[2]= t;
 	return result; //tab de tab avec nb cycle en result[1]
 }
 
 function tri_par_selection(t){
+	var t0 = performance.now();
 	cpt=t.length;
 	for(i=0;i<cpt-1;i++) {
 		min=i;
@@ -51,15 +59,20 @@ function tri_par_selection(t){
 			t[i]=temp;
 		}
 	}
-	console.log(t);
+/*	console.log(t);
+*/
+	var t1 = performance.now();	
+
 	result = new Array();
-	result[0]= t;
+	result[0]= (t1 - t0);
 	result[1]= cpt; //nb de cycle 
+	result[2]= t;
 
 	return result; 	 //tab de tab avec nb cycle en result[1]
 }
 
 function tri_shell(t){
+	var t0 = performance.now();
 	n=0;
 	cpt=t.length;
 	while(n<cpt) { n=3*n+1};
@@ -75,15 +88,18 @@ function tri_shell(t){
 			t[j]=mem;
 		}
 	}
-	console.log(t);
-	result = new Array();
-	result[0]= t;
+	var t1 = performance.now();	
+/*	console.log(t);
+*/	result = new Array();
+	result[0]= (t1 - t0);
 	result[1]= cpt; //nb de cycle 
+	result[2]= t;
 
 	return result; 	 //tab de tab avec nb cycle en result[1]
 }
 
 function tri_fusion (tab){
+	var t0 = performance.now();
 	cpt=tab.length;
 	j = 0;
 	if( cpt <= 1 ){
@@ -104,13 +120,17 @@ function tri_fusion (tab){
 		// Fusionne les petits tableaux en plus grand
 		fusionner(tab1,tab2,tab);
 	}
+	var t1 = performance.now();	
 	result = new Array();
-	result[0]= tab;
+	result[0]= (t1 - t0);
 	result[1]= cpt; //nb de cycle 
+	result[2]= tab;
+
 	return result; //tab de tab avec nb cycle en result[1]
 }
 
 function fusionner ( tab1, tab2, $tab ){
+	var t0 = performance.now();
 	i = 0;
 	i1 = i2 = 0;
 	// Fusionne les petits tableaux dans le plus grand
@@ -130,9 +150,14 @@ function fusionner ( tab1, tab2, $tab ){
 		tab[ i ] = tab2[ i2++ ];
 		i++;
 	}
+	var t1 = performance.now();	
+	result = new Array();
+	result[0]= (t1 - t0);
+	return result;
 }
 
 function tri_peigne(tableau){
+	var t0 = performance.now();
 	gap = tableau.length;
 	permutation = true;
 
@@ -152,9 +177,11 @@ function tri_peigne(tableau){
 			cpt++; //nb cycle
 		}
 	}
+	var t1 = performance.now();	
 	result = new Array();
-	result[0]= tableau;
-	result[1]= cpt; //nb de cycle 
+	result[0]= (t1 - t0);
+	result[1]= cpt; //nb de cycle
+	result[2]= tableau 
 	return result; //tab de tab avec nb cycle en result[1]
 }
 /*

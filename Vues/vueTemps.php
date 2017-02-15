@@ -17,5 +17,5 @@
 	    <input type="button" onclick="myFunction()" value="Submit form">
 	  </form>
 	<hr>
-	<canvas id="canvas"></canvas>
+	<canvas id="myChart" width="400" height="400"></canvas>
 <?php $content = ob_get_clean(); ?>
