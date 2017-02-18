@@ -1,11 +1,13 @@
 <?php
 require('Modeles/modeles.php');
+
 if (isset($_GET['stats'])) {
 	switch ($_GET['stats']) {
 		case 'couts':
 			require('Vues/vueCouts.php');
 			break;
 		case 'temps':
+			require_once('Modeles/algos.php');
 			require('Vues/vueTemps.php');
 			break;
 		default:

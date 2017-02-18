@@ -1,22 +1,27 @@
 <?php
 function tri_par_insertion($tab){
+	$time_start = microtime(true);
 	$cpt = count($tab);
 	for ($i=0; $i < $cpt; $i++) { 
 		$mem=$tab[$i];
 		$pos=$i-1;
-		while(($pos>=0) && ($tab[$pos]>mem)) {
+		while(($pos>=0) && ($tab[$pos]> $mem)) {
 			$tab[$pos+1]=$tab[$pos];
 			$pos--;
 		}
 		$tab[$pos+1]=$mem;
 	}
+	$time_end = microtime(true);
+    $time = $time_end - $time_start;
 
 	$result = array();
 	$result[0] = $tab;
 	$result[1] = $i;
+	$result[2] = $time;
 	return ($result);
 }
 function tri_par_selection($tab){
+	$time_start = microtime(true);
 	$cpt=count($tab);
 	for ($i=0; $i < $cpt; $i++) { 
 		$min=$i;
@@ -29,14 +34,18 @@ function tri_par_selection($tab){
 			$tab[$i]=$tabemp;
 		}
 	}
-	var_dump($tab);
+	$time_end = microtime(true);
+    $time = $time_end - $time_start;
+	
 	$result = array();
 	$result[0]= $tab;
 	$result[1]= $cpt; //nb de cycle 
+	$result[2] = $time;
 
 	return $result; 	 //tab de tab avec nb cycle en result[1]
 }
 function tri_a_bulles($tab){
+	$time_start = microtime(true);
 	$permut=true;
 	$cpt = (count($tab)) - 1;
 	while($permut) {
@@ -51,13 +60,17 @@ function tri_a_bulles($tab){
 		}
 		$cpt--;
 	}
-	var_dump($tab);
+	$time_end = microtime(true);
+    $time = $time_end - $time_start;
+
 	$result = array();
 	$result[0]= $tab;
 	$result[1]= $cpt; //nb de cycle 
+	$result[2] = $time;
 	return $result; //tab de tab avec nb cycle en result[1]
 }
 function tri_shell($tab){
+	$time_start = microtime(true);
 	$n=0;
 	$cpt=count($tab);
 //	while($n<$cpt) {$n*=3;$n+=1};
@@ -73,14 +86,18 @@ function tri_shell($tab){
 			$tab[$j]=$mem;
 		}
 	}
-	var_dump($tab);
+	$time_end = microtime(true);
+    $time = $time_end - $time_start;
+
 	$result = array();
 	$result[0]= $tab;
 	$result[1]= $cpt; //nb de cycle 
+	$result[2] = $time;
 
 	return $result; 	 //tab de tab avec nb cycle en result[1]
 }
 function tri_fusion ($tab){
+	$time_start = microtime(true);
 	$cpt=count($tab);
 	if( $cpt <= 1 ){
 		return;	
@@ -99,9 +116,13 @@ function tri_fusion ($tab){
 		// Fusionne les petits $tableaux en plus grand
 		fusionner($tab1,$tab2,$tab);
 	}
+	$time_end = microtime(true);
+    $time = $time_end - $time_start;
+
 	$result = array();
 	$result[0]= $tab;
-	$result[1]= $cpt; //nb de cycle 
+	$result[1]= $cpt; //nb de cycle
+	$result[2] = $time; 
 	return $result; //tab de tab avec nb cycle en result[1]
 }
 function fusionner ( $tab1, $tab2, $tab ){
@@ -142,28 +163,33 @@ function tri_rapide($tab){
 	}
 //	return array_merge(static::triRapide($left), array($pivot_key => $pivot), static::triRapide($right));
 }
-function tri_peigne($tab){
-	$gap = count($tab);
+function tri_peigne($tableau){
+	$time_start = microtime(true);
+	$gap = count($tableau);
 	$permutation = true;
+	$cpt = 0;
+    $gap = count($tableau);
+    $swap = true;
+    while ($gap > 1 || $swap){
+        if($gap > 1) $gap /= 1.25;
+        $swap = false;
+        $i = 0;
+        while($i+$gap < count($tableau)){
+            if($tableau[$i] > $tableau[$i+$gap]){
+                list($tableau[$i], $tableau[$i+$gap]) = array($tableau[$i+$gap],$tableau[$i]);
+                $swap = true;
+            }
+            $i++;
+        }
+        $cpt++;
+    }
 
-	$cpt = 0; //declaration nb cycle
+	$time_end = microtime(true);
+    $time = $time_end - $time_start;
 
-	while ($permutation || $gap > 1) {
-		$permutation = false;
-		$gap = $gap / 1.3;
-		if ($gap<1) {$gap=1 ; }
-		for ($en_cours=0;$en_cours<20-$gap;$en_cours++) {
-			if ($tab[$en_cours]>$tab[$en_cours+$gap]) {
-				$permutation = true;
-				$temp = $tab[$en_cours];
-				$tab[$en_cours] = $tab[$en_cours+$gap];
-				$tab[$en_cours+$gap] = $temp;
-			}
-			$cpt++; //nb cycle
-		}
-	}
 	$result = array();
-	$result[0]= $tab;
+	$result[0]= $tableau;
 	$result[1]= $cpt; //nb de cycle 
+	$result[2] = $time;
 	return $result; //tableau de tableaux avec nb cycle en result[1]
 }
