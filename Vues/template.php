@@ -9,6 +9,7 @@
 	<script src="Contenu/call_algo.js"></script>
 	<script src="Contenu/algos.js"></script>
 	<script src="Contenu/dist/Chart.bundle.js"></script>
+	<script src="Contenu/dist/utils.js"></script>
 </head>
 <body>
 <div id="header">
@@ -28,6 +29,7 @@
 </div>
 <div id="main">
 <?=$content?>
+<div id="chart"></div>
 </div>
 <div id="footer">
 	<table class="table" style="margin: 0">
@@ -39,4 +41,18 @@
 	</table>
 </div>
 </body>
+
 <script src="Contenu/charts.js"></script>
+<script type="text/javascript"> 
+
+function validation()
+{
+	//console.log("inside validation => template.php");
+	var jArray= <?php echo json_encode($phpArray ); ?>;
+	return add_time(jArray);
+	/*for(var i=0;i<5;i++){
+        alert(jArray[i]);
+    }*/
+
+}
+</script>
