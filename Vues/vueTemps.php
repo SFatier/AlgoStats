@@ -36,6 +36,8 @@
 	  <br><br>
 	  <input type="submit" name="submit" value="Submit">  
 	</form>
+
+	<button id="addDataset" onclick="add2()">Add Dataset</button>
 	<hr>
 	<canvas id="myChart" width="400" height="400"></canvas>
 
@@ -47,7 +49,7 @@
 	    $random = list_random($select);
 	    $quasie = list_quasie($select);
 	    $multie = list_multie($select);
-	    $medium = list_medium($select);
+	   // $medium = list_medium($select);
 
 	    foreach($_POST['tri'] as $tri) {
 	        if($tri == "All"){
@@ -56,12 +58,12 @@
 	        	$resultat2 = tri_par_selection($rangee);	        	
 	        	$resultat3 = tri_a_bulles($rangee);	        
 	        	$resultat4 = tri_shell($rangee);	        	
-	        	//$resultat5 = tri_fusion($rangee);	        	
-	        	$resultat5 = null;
+	        	$resultat5 = tri_fusion($rangee);
+	        	//$resultat5 = null;
 	        	//$resultat6 = tri_rapide($rangee);
 	        	$resultat6 = null;
 	        	$resultat7 = tri_peigne($rangee);
-	        $tab_rangee = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
+	        	$tab_rangee = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
 	        	echo "tab_range : ";
 	        	var_dump($tab_rangee);
 
@@ -70,8 +72,7 @@
 	        	$resultat2 = tri_par_selection($invert);	        	
 	        	$resultat3 = tri_a_bulles($invert);	        
 	        	$resultat4 = tri_shell($invert);	        	
-	        	//$resultat5 = tri_fusion($invert);
-	        	$resultat5 = null;	        	
+	        	$resultat5 = tri_fusion($invert);
 	        	//$resultat6 = tri_rapide($invert);
 				$resultat6 = null;
 	        	$resultat7 = tri_peigne($invert);
@@ -84,8 +85,7 @@
 	        	$resultat2 = tri_par_selection($random);	        	
 	        	$resultat3 = tri_a_bulles($random);	        
 	        	$resultat4 = tri_shell($random);	        	
-	        	//$resultat5 = tri_fusion($random);	        	
-	        	$resultat5 = null;	
+	        	$resultat5 = tri_fusion($random);	        	
 	        	//$resultat6 = tri_rapide($random);
 	        	$resultat6 = null;	
 	        	$resultat7 = tri_peigne($random);
@@ -98,7 +98,7 @@
 	        	$resultat2 = tri_par_selection($quasie);	        	
 	        	$resultat3 = tri_a_bulles($quasie);	        
 	        	$resultat4 = tri_shell($quasie);	        	
-	        	//$resultat5 = tri_fusion($quasie);
+	        	$resultat5 = tri_fusion($quasie);
 	        	$resultat5 = null;	        	
 	        	//$resultat6 = tri_rapide($quasie);
 	        	$resultat6 = null;
@@ -112,8 +112,7 @@
 	        	$resultat2 = tri_par_selection($multie);	        	
 	        	$resultat3 = tri_a_bulles($multie);	        
 	        	$resultat4 = tri_shell($multie);	        	
-	        	//$resultat5 = tri_fusion($multie);	        	
-	        	$resultat5 = null;	
+	        	$resultat5 = tri_fusion($multie);	        	
 	        	//$resultat6 = tri_rapide($multie);
 	        	$resultat6 = null;	
 	        	$resultat7 = tri_peigne($multie);
@@ -122,7 +121,7 @@
 	        	var_dump($tab_multie);
 
 	        	//medium
-	        	$resultat1 = tri_par_insertion($medium);
+	        	/*$resultat1 = tri_par_insertion($medium);
 	        	$resultat2 = tri_par_selection($medium);	        	
 	        	$resultat3 = tri_a_bulles($medium);	        
 	        	$resultat4 = tri_shell($medium);	        	
@@ -133,12 +132,15 @@
 	        	$resultat7 = tri_peigne($medium);
 	        	$tab_medium = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
 	        	echo "tab_medium";
-	        	var_dump($tab_medium);
+	        	var_dump($tab_medium);*/
 
 	        }
+	       
 	    }
-	    echo $select;
+	    echo "Nombre d'élement spécifié".$select;
 	}
 ?>
-
+<div style="width: 50%">
+    <canvas id="myChart" height="450" width="600"></canvas>
+</div>
 <?php $content = ob_get_clean(); ?>

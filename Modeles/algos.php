@@ -96,58 +96,59 @@ function tri_shell($tab){
 
 	return $result; 	 //tab de tab avec nb cycle en result[1]
 }
-function tri_fusion ($tab){
-	$time_start = microtime(true);
-	$cpt=count($tab);
-	if( $cpt <= 1 ){
-		return;	
-	} else {
-		$tab1 = array();
-		$tab2 = array();
-		for( $i = 0; $i < $cpt; $i++) {
-			if( $i < $cpt / 2 )
-				$tab1[$i] = $tab[$i];
-			else
-				$tab2[$i] = $tab[$i];
-		}
-		// Appel la fonction tri récursivement
-		tri_fusion($tab1);
-		tri_fusion($tab2);
-		// Fusionne les petits $tableaux en plus grand
-		fusionner($tab1,$tab2,$tab);
-	}
-	$time_end = microtime(true);
-    $time = $time_end - $time_start;
+function fusion($tab1, $tab2)
+    {
+  		$time_start = microtime(true);
 
-	$result = array();
-	$result[0]= $tab;
-	$result[1]= $cpt; //nb de cycle
-	$result[2] = $time; 
-	return $result; //tab de tab avec nb cycle en result[1]
-}
-function fusionner ( $tab1, $tab2, $tab ){
-	$i = 0;
-	$i1 = $i2 = 0;
-	$cpt1 = count($tab1);
-	$cpt2 = count($tab2);
-	// Fusionne les petits $tableaux dans le plus grand
-	while( $i1 < $cpt1 && $i2 < $cpt2 ) {
-		if( $tab1[$i1] < $tab2[$i2] ) // On compare ici
-			$tab[$i] = $tab1[$i1++];
-		else
-			$tab[$i] = $tab2[$i2++];
-		$i++;
-	}
-	// S'il reste des éléments dans un des 2 $tableaux mais pas dans l'autre
-	while( $i1 < count($tab1)) {
-		$tab[$i] = $tab1[$i1++];
-		$i++;
-	}
-	while($i2 < $tab2) {
-		$tab[$i] = $tab2[$i2++];
-		$i++;
-	}
-}
+        $taille_g=count($tab1);
+        $taille_d=count($tab2);
+        $i_g=0;
+        $i_d=0;
+        
+        for($i = 0; $i_g < $taille_g && $i_d < $taille_d; $i++) {
+            if($tab1[$i_g] <= $tab2[$i_d])
+                $res[$i] = $tab1[$i_g++];
+            else
+                $res[$i] = $tab2[$i_d++];
+        }
+        while($i_g < $taille_g) {
+            $res[$i++] = $tab1[$i_g++];
+        }
+        while($i_d<$taille_d) {
+            $res[$i++] = $tab2[$i_d++];
+        }
+        
+		$time_end = microtime(true);
+	    $time = $time_end - $time_start;
+
+    	$result = array();
+		$result[0]= $res;
+		$result[1]= null; //nb de cycle 
+		$result[2] = $time;
+		return $result;			
+    }
+     
+function copie($tab, $debut, $fin)
+    {
+        for($i = $debut; $i <= $fin; $i++) {
+            $res[$i-$debut]=$tab[$i];
+        }
+        return $res;
+    }
+ 
+function tri_fusion($tab)
+    {
+        $taille = count($tab);
+        if($taille <= 1) {
+            return $tab;
+        } else {
+            $mileu = $taille/2;
+            $gauche = copie($tab,0,(int)$mileu-1);
+            $droite = copie($tab,(int)$mileu,$taille-1);
+            return fusion(tri_fusion($gauche),tri_fusion($droite));
+        }
+    }
+
 function tri_rapide($tab){
 	if(count($tab) < 2 )
 		return $tab;
@@ -193,3 +194,4 @@ function tri_peigne($tableau){
 	$result[2] = $time;
 	return $result; //tableau de tableaux avec nb cycle en result[1]
 }
+
