@@ -76,6 +76,6 @@
 	</table>
 	<hr>
 <div style="width: 50%">
-    <canvas id="canvas" height="450" width="600"></canvas>
+    <canvas id="canvas2" height="450" width="600"></canvas>
  </div>
 <?php $content = ob_get_clean(); ?>

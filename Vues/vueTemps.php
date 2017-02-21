@@ -41,7 +41,7 @@
   	<br><br>
 	  <center><input type="submit" name="submit" value="Submit" ></center>
 	<br><br>
-	<label>ps : Les algorithmes sont automatiques comparés à toutes les séries données sur le sujet.</label>
+	<label>ps : Les algorithmes sont automatiquement comparés à toutes les séries données sur le sujet.</label>
 </form>
 <hr>
 <center>
