@@ -72,13 +72,9 @@
 	    	$resultat3 = tri_a_bulles($rangee);	        
 	    	$resultat4 = tri_shell($rangee);	        	
 	    	$resultat5 = tri_fusion($rangee);
-	    	//$resultat5 = null;
-	    	//$resultat6 = tri_rapide($rangee);
-	    	$resultat6 = null;
+	    	$resultat6 = tri_rapide($rangee);
 	    	$resultat7 = tri_peigne($rangee);
 	    	$tab_rangee = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
-	    	//echo "tab_range : ";
-	    	//var_dump($tab_rangee);
 
 	    	//Inverse
 	    	$resultat1 = tri_par_insertion($invert);
@@ -86,12 +82,9 @@
 	    	$resultat3 = tri_a_bulles($invert);	        
 	    	$resultat4 = tri_shell($invert);	        	
 	    	$resultat5 = tri_fusion($invert);
-	    	//$resultat6 = tri_rapide($invert);
-			$resultat6 = null;
+	    	$resultat6 = tri_rapide($invert);
 	    	$resultat7 = tri_peigne($invert);
 	    	$tab_inverse = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
-	    	//echo "tab_inverse : ";
-	    	//var_dump($tab_inverse);
 
 	    	//random
 	    	$resultat1 = tri_par_insertion($random);
@@ -99,26 +92,19 @@
 	    	$resultat3 = tri_a_bulles($random);	        
 	    	$resultat4 = tri_shell($random);	        	
 	    	$resultat5 = tri_fusion($random);	        	
-	    	//$resultat6 = tri_rapide($random);
-	    	$resultat6 = null;	
+	    	$resultat6 = tri_rapide($random);
 	    	$resultat7 = tri_peigne($random);
 	    	$tab_random = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
-	    	//echo "tab_random : ";
-	    	//var_dump($tab_random);
 
 	    	//quasi
 	    	$resultat1 = tri_par_insertion($quasie);
 	    	$resultat2 = tri_par_selection($quasie);	        	
 	    	$resultat3 = tri_a_bulles($quasie);	        
 	    	$resultat4 = tri_shell($quasie);	        	
-	    	$resultat5 = tri_fusion($quasie);
-	    	        	
-	    	//$resultat6 = tri_rapide($quasie);
-	    	$resultat6 = null;
+	    	$resultat5 = tri_fusion($quasie);	    	        	
+	    	$resultat6 = tri_rapide($quasie);
 	    	$resultat7 = tri_peigne($quasie);
 	    	$tab_quasi = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
-	    	//echo "tab_quasi : ";
-	    	//var_dump($tab_quasi);
 
 	    	//Multi
 	    	$resultat1 = tri_par_insertion($multie);
@@ -126,12 +112,9 @@
 	    	$resultat3 = tri_a_bulles($multie);	        
 	    	$resultat4 = tri_shell($multie);	        	
 	    	$resultat5 = tri_fusion($multie);	        	
-	    	//$resultat6 = tri_rapide($multie);
-	    	$resultat6 = null;	
+	    	$resultat6 = tri_rapide($multie);
 	    	$resultat7 = tri_peigne($multie);
 	    	$tab_multie = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
-	    	//echo "tab_multie : ";
-	    	//var_dump($tab_multie);
 
 	    	//medium
 	    	/*$resultat1 = tri_par_insertion($medium);
@@ -166,9 +149,7 @@
 				    	$resultat3 = tri_par_insertion($random);	        
 				    	$resultat4 = tri_par_insertion($quasie);	        	
 				    	$resultat5 = tri_par_insertion($multie);
-				    	//$resultat6 = tri_rapide($rangee);
-				    	$resultat6 = null;
-				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2]);
+				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2]);
 						break;
 
 					case 'Selection':
@@ -178,9 +159,7 @@
 				    	$resultat3 = tri_par_selection($random);	        
 				    	$resultat4 = tri_par_selection($quasie);	        	
 				    	$resultat5 = tri_par_selection($multie);
-				    	//$resultat6 = tri_rapide($rangee);
-				    	$resultat6 = null;
-				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2]);
+				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2]);
 
 						break;
 
@@ -191,9 +170,7 @@
 				    	$resultat3 = tri_a_bulles($random);	        
 				    	$resultat4 = tri_a_bulles($quasie);	        	
 				    	$resultat5 = tri_a_bulles($multie);
-				    	//$resultat6 = tri_rapide($rangee);
-				    	$resultat6 = null;
-				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2]);
+				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2]);
 
 						break;
 
@@ -204,9 +181,7 @@
 				    	$resultat3 = tri_shell($random);	        
 				    	$resultat4 = tri_shell($quasie);	        	
 				    	$resultat5 = tri_shell($multie);
-				    	//$resultat6 = tri_rapide($rangee);
-				    	$resultat6 = null;
-				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2]);
+				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2]);
 
 						break;
 
@@ -217,24 +192,20 @@
 				    	$resultat3 = tri_fusion($random);	        
 				    	$resultat4 = tri_fusion($quasie);	        	
 				    	$resultat5 = tri_fusion($multie);
-				    	//$resultat6 = tri_rapide($rangee);
-				    	$resultat6 = null;
-				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2]);
+				    	$resultat6 = tri_rapide($rangee);
+				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2]);
 
 						break;
 
 					case 'Rapide':
-					/*
-					$name[$i] = $tri[$i];
-					$resultat1 = tri_par_insertion($rangee);
-			    	$resultat2 = tri_par_insertion($invert);	        	
-			    	$resultat3 = tri_par_insertion($random);	        
-			    	$resultat4 = tri_par_insertion($quasie);	        	
-			    	$resultat5 = tri_par_insertion($multie);
-			    	//$resultat6 = tri_rapide($rangee);
-			    	$resultat6 = null;
-			    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2])
-*/
+						$name[$i] = $tri[$i];
+						$resultat1 = tri_rapide($rangee);
+				    	$resultat2 = tri_rapide($invert);	        	
+				    	$resultat3 = tri_rapide($random);	        
+				    	$resultat4 = tri_rapide($quasie);	        	
+				    	$resultat5 = tri_rapide($multie);
+				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2]);
+
 						break;
 
 					case 'Peigne':
@@ -244,9 +215,7 @@
 				    	$resultat3 = tri_peigne($random);	        
 				    	$resultat4 = tri_peigne($quasie);	        	
 				    	$resultat5 = tri_peigne($multie);
-				    	//$resultat6 = tri_rapide($rangee);
-				    	$resultat6 = null;
-				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], 0);
+				    	$rslt = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2]);
 						break;
 				}
 				

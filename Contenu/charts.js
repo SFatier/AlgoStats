@@ -1,6 +1,6 @@
 var color = Chart.helpers.color;
 var horizontalBarChartData = {
-    labels: ["Triée", "Inverse", "Random", "Quasi", "Multi", "Moyenne"],
+    labels: ["Triée", "Inverse", "Random", "Quasi", "Multi"],
     datasets: [{ }]
 };
 

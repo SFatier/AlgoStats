@@ -149,21 +149,33 @@ function tri_fusion($tab)
         }
     }
 
-function tri_rapide($tab){
-	if(count($tab) < 2 )
-		return $tab;
-	$left = $right = array();
-	$tab = [];
-	$pivot_key  = Object.keys( $tab );
-	$pivot  = $tab.shift();
-	foreach( $tab as $k => $v ) {
-		if( $v < $pivot )
-			$left[$k] = $v;
-		else
-			$right[$k] = $v;
-	}
-//	return array_merge(static::triRapide($left), array($pivot_key => $pivot), static::triRapide($right));
+function tri_rapide($tableau){
+	$time_start = microtime(true);
+	$cpt =0;
+	if( count( $tableau ) < 2 ) {
+            return $tableau;
+    }
+    $left = $right = array( );
+    reset( $tableau );
+    $pivot_key  = key( $tableau );
+    $pivot  = array_shift( $tableau );
+    foreach( $tableau as $k => $v ) {
+        if( $v < $pivot )
+            $left[$k] = $v;
+        else
+            $right[$k] = $v;
+        $cpt++;
+    }
+
+	$time_end = microtime(true);
+	$time = $time_end - $time_start;
+	$result = array();
+	$result[0]= $tableau;
+	$result[1]= $cpt; 
+	$result[2] = $time;
+	return $result;
 }
+
 function tri_peigne($tableau){
 	$time_start = microtime(true);
 	$gap = count($tableau);

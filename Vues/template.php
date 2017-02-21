@@ -57,37 +57,37 @@ try {
 		    var dsColor = window.chartColors[colorName];
 		    var Insertion = {
 		        label: 'Insertion',
-		        data: [jArray[0][0],jArray[1][0],jArray[2][0], jArray[3][0], jArray[4][0], 0],
+		        data: [jArray[0][0],jArray[1][0],jArray[2][0], jArray[3][0], jArray[4][0]],
 		        backgroundColor: 'yellow'
 		    };
 		    var Selection = {
 		        label: 'Selection',
-		        data: [jArray[0][1],jArray[1][1],jArray[2][1], jArray[3][1], jArray[4][1], 0],
+		        data: [jArray[0][1],jArray[1][1],jArray[2][1], jArray[3][1], jArray[4][1]],
 		        backgroundColor: 'green'
 		    };
 		    var Bulle = {
 		        label: 'Bulle',
-		        data: [jArray[0][2],jArray[1][2],jArray[2][2], jArray[3][2], jArray[4][2], 0],
+		        data: [jArray[0][2],jArray[1][2],jArray[2][2], jArray[3][2], jArray[4][2]],
 		        backgroundColor: 'red'
 		    };
 		    var Shell = {
 		        label: 'Shell',
-		        data: [jArray[0][3],jArray[1][3],jArray[2][3], jArray[3][3], jArray[4][3], 0],
+		        data: [jArray[0][3],jArray[1][3],jArray[2][3], jArray[3][3], jArray[4][3]],
 		        backgroundColor: 'orange'
 		    };
 		    var Fusion = {
 		        label: 'Fusion',
-		        data: [jArray[0][4],jArray[1][4],jArray[2][4], jArray[3][4], jArray[4][4], 0],
+		        data: [jArray[0][4],jArray[1][4],jArray[2][4], jArray[3][4], jArray[4][4]],
 		        backgroundColor: 'blue'
 		    };
 		     var Peigne = {
 		        label: 'Peigne',
-		        data: [jArray[0][5],jArray[1][5],jArray[2][5], jArray[3][5], jArray[4][5], 0],
+		        data: [jArray[0][5],jArray[1][5],jArray[2][5], jArray[3][5], jArray[4][5]],
 		        backgroundColor: 'pink'
 		    };
 		    var Rapide = {
 		        label: 'Rapide',
-		        data: [0,0,0, 0,0,0],
+		        data: [jArray[0][6],jArray[1][6],jArray[2][6], jArray[3][6], jArray[4][6]],
 		        backgroundColor: 'violet'
 		    };
 		    horizontalBarChartData.datasets.push(Insertion);
