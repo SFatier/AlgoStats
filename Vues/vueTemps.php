@@ -44,6 +44,7 @@
 
 	if( isset($_POST['tri']) && is_array($_POST['tri']) && isset($_POST['nb_element'])) 
 	{
+		$phpArray = null;
 	    $select = $_POST['nb_element'];
 	    $rangee = list_rangee($select);
 	    $invert = list_invert($select);
@@ -136,17 +137,15 @@
 		    	$tab_medium = array($resultat1[2], $resultat2[2], $resultat3[2], $resultat4[2], $resultat5[2], $resultat6[2], $resultat7[2]);
 		    	echo "tab_medium";
 		    	var_dump($tab_medium);*/
-			}
-	   		$phpArray = array(
+		    	$phpArray = array(
 		          0 => $tab_rangee, 
 		          1 => $tab_inverse, 
 		          2 => $tab_random, 
 		          3 => $tab_quasi,
 		          4 => $tab_multie
-		    );
+		    	);
+			}
 		}
 	}	
 ?>
-
-<button id="addDataset">Add Dataset</button>
 <?php $content = ob_get_clean(); ?>

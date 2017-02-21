@@ -31,7 +31,7 @@
 
 <?=$content?>
 
-<?php echo '<script type="text/javascript">var jArray = '. json_encode($phpArray) .';</script>' ?>;
+<?php echo '<script type="text/javascript">var jArray = '. json_encode($phpArray) .'; var tri = "'. $tri .'";</script>' ?>;
 
 
 <div id="chart"></div>
@@ -51,44 +51,60 @@
 <script type="text/javascript"> 
 
 $("#frmChart").submit(function(event) {
-
     return true;
-
 });
 
 if (jArray && jArray.length > 0) {
-console.log(jArray);
-var colorName = colorNames[horizontalBarChartData.datasets.length % colorNames.length];
-    var dsColor = window.chartColors[colorName];
-    var newDataset = {
-        label: 'peigne',
-        data: jArray[0],
-        backgroundColor: 'yellow'
-    };
-    horizontalBarChartData.datasets.push(newDataset);
-window.myHorizontalBar.update();
-
-
-}
-
-/*function validation()
-{
-	//console.log("inside validation => template.php");
-	var jArray= JSON.Parse('<?php echo json_encode($phpArray ); ?>');
-	return add_time(jArray);
-	/*for(var i=0;i<5;i++){
-        alert(jArray[i]);
-    }*
-
-    /var colorName = colorNames[horizontalBarChartData.datasets.length % colorNames.length];;
+	console.log(jArray);
+	console.log(tri);
+	if (tri == "All")
+	{
+		var colorName = colorNames[horizontalBarChartData.datasets.length % colorNames.length];
 	    var dsColor = window.chartColors[colorName];
-	    var newDataset = {
-	        label: 'peigne',
-	        data: jarray[0],
+	    var Insertion = {
+	        label: 'Insertion',
+	        data: [jArray[0][0],jArray[1][0],jArray[2][0], jArray[3][0], jArray[4][0], 0],
 	        backgroundColor: 'yellow'
 	    };
-	    horizontalBarChartData.datasets.push(newDataset);
-	   window.myHorizontalBar.update();
+	    var Selection = {
+	        label: 'Selection',
+	        data: [jArray[0][1],jArray[1][1],jArray[2][1], jArray[3][1], jArray[4][1], 0],
+	        backgroundColor: 'green'
+	    };
+	    var Bulle = {
+	        label: 'Bulle',
+	        data: [jArray[0][2],jArray[1][2],jArray[2][2], jArray[3][2], jArray[4][2], 0],
+	        backgroundColor: 'red'
+	    };
+	    var Shell = {
+	        label: 'Shell',
+	        data: [jArray[0][3],jArray[1][3],jArray[2][3], jArray[3][3], jArray[4][3], 0],
+	        backgroundColor: 'orange'
+	    };
+	    var Fusion = {
+	        label: 'Fusion',
+	        data: [jArray[0][4],jArray[1][4],jArray[2][4], jArray[3][4], jArray[4][4], 0],
+	        backgroundColor: 'blue'
+	    };
+	     var Peigne = {
+	        label: 'Peigne',
+	        data: [jArray[0][5],jArray[1][5],jArray[2][5], jArray[3][5], jArray[4][5], 0],
+	        backgroundColor: 'pink'
+	    };
+	    var Rapide = {
+	        label: 'Rapide',
+	        data: [0,0,0, 0,0,0],
+	        backgroundColor: 'violet'
+	    };
+	    horizontalBarChartData.datasets.push(Insertion);
+	    horizontalBarChartData.datasets.push(Selection);
+	    horizontalBarChartData.datasets.push(Bulle);
+	    horizontalBarChartData.datasets.push(Shell);
+	    horizontalBarChartData.datasets.push(Fusion);
+	    horizontalBarChartData.datasets.push(Peigne);
+	    horizontalBarChartData.datasets.push(Rapide);
 
-}*/
+		//window.myHorizontalBar.update();
+	}
+}
 </script>
