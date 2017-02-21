@@ -1,15 +1,7 @@
 var color = Chart.helpers.color;
 var horizontalBarChartData = {
     labels: ["Triée", "Inverse", "Random", "Quasi", "Multi", "Moyenne"],
-    datasets: [{
-        label: 'Dataset 1',
-        backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-        borderColor: window.chartColors.red,
-        borderWidth: 1,
-        data: []
-    },
-
-    ]
+    datasets: [{ }]
 };
 
 window.onload = function() {
