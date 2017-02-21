@@ -119,6 +119,6 @@ try {
 		}
 	}
 }catch(e){
-	console.log("=> Le graphique est vide, si vous n'avez pas encore checked une ou des checkbox");
+	console.log("=> Le graphique est vide, merci de sélectionnées une ou des checkbox.");
 }
 </script>
